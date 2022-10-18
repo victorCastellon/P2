@@ -105,7 +105,7 @@ Ejercicios
   continuación, una captura de `wavesurfer` en la que se vea con claridad la señal temporal, el contorno de
   potencia y la tasa de cruces por cero, junto con el etiquetado manual de los segmentos.
 
-  <img src="img/Segm_voz.jpeg" width="640" align="center">
+  <img src="img/Segm_voz.jpg" width="640" align="center">
 
   En la grafica podemos observar la zcr, la potencia, label manual y el vad automatizado. En ese orden respectivamente.
 
