@@ -105,6 +105,10 @@ Ejercicios
   continuación, una captura de `wavesurfer` en la que se vea con claridad la señal temporal, el contorno de
   potencia y la tasa de cruces por cero, junto con el etiquetado manual de los segmentos.
 
+  <img src="img/Segm_voz.jpeg" width="640" align="center">
+
+  En la grafica podemos observar la zcr, la potencia, label manual y el vad automatizado. En ese orden respectivamente.
+
 
 - A la vista de la gráfica, indique qué valores considera adecuados para las magnitudes siguientes:
 
@@ -113,7 +117,11 @@ Ejercicios
 
 	* Duración mínima razonable de los segmentos de voz y silencio.
 
+	Creemos que los segmentos de voz con una duración inferior al medio segundo no pueden llevar ningun tipo de información relevante, por lo tanto es una duración mínima razonable.
+
 	* ¿Es capaz de sacar alguna conclusión a partir de la evolución de la tasa de cruces por cero?
+
+	La tasa de cruces por cero es más relevante que la potencia para poder detectar voz, debido a que los fonemas sordos no serían detectables si nos limitamos a tratar la poténcia.
 
 
 ### Desarrollo del detector de actividad vocal
@@ -121,14 +129,24 @@ Ejercicios
 - Complete el código de los ficheros de la práctica para implementar un detector de actividad vocal en
   tiempo real tan exacto como sea posible. Tome como objetivo la maximización de la puntuación-F `TOTAL`.
 
+  La maxima F Total la hemos obtenido con el parámetro alfa1 = 6.
+
 - Inserte una gráfica en la que se vea con claridad la señal temporal, el etiquetado manual y la detección
   automática conseguida para el fichero grabado al efecto. 
 
+  <img src="img/Segm_voz.jpeg" width="640" align="center">
+
+  Esta imagen, la misma que el anterior apartado, observamos las diferencias entre el label manual y el vad automatizado.
+
 - Explique, si existen. las discrepancias entre el etiquetado manual y la detección automática.
+
+  La detección automática detecta correctamente los silencios. Las diferencias radican en que cuando la voz está por debajo del umbral esta es detectada como silencio, por lo tanto nos detecta silencios muy cortos de duración en momentos del audio donde se está hablando. Pero por lo general son bástante parecidos los dos etiquetados.
 
 - Evalúe los resultados sobre la base de datos `db.v4` con el script `vad_evaluation.pl` e inserte a 
   continuación las tasas de sensibilidad (*recall*) y precisión para el conjunto de la base de datos (sólo
   el resumen).
+
+  <img src="img/F-score_umbral6.jpeg" width="640" align="center">
 
 
 ### Trabajos de ampliación
