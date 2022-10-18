@@ -134,7 +134,7 @@ Ejercicios
 - Inserte una gráfica en la que se vea con claridad la señal temporal, el etiquetado manual y la detección
   automática conseguida para el fichero grabado al efecto. 
 
-  <img src="img/Segm_voz.jpeg" width="640" align="center">
+  <img src="img/Segm_voz.jpg" width="640" align="center">
 
   Esta imagen, la misma que el anterior apartado, observamos las diferencias entre el label manual y el vad automatizado.
 
@@ -146,7 +146,7 @@ Ejercicios
   continuación las tasas de sensibilidad (*recall*) y precisión para el conjunto de la base de datos (sólo
   el resumen).
 
-  <img src="img/F-score_umbral6.jpeg" width="640" align="center">
+  <img src="img/F-score_umbral6.png" width="640" align="center">
 
 
 ### Trabajos de ampliación
