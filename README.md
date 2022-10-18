@@ -131,7 +131,7 @@ Ejercicios
 - Complete el código de los ficheros de la práctica para implementar un detector de actividad vocal en
   tiempo real tan exacto como sea posible. Tome como objetivo la maximización de la puntuación-F `TOTAL`.
 
-  La maxima F Total la hemos obtenido con el parámetro alfa1 = 6.
+  La maxima F Total la hemos obtenido con el parámetro alfa1 = 4.3.
 
 - Inserte una gráfica en la que se vea con claridad la señal temporal, el etiquetado manual y la detección
   automática conseguida para el fichero grabado al efecto. 
