@@ -148,7 +148,7 @@ Ejercicios
   continuación las tasas de sensibilidad (*recall*) y precisión para el conjunto de la base de datos (sólo
   el resumen).
 
-  <img src="img/F-score_umbral6.png" width="640" align="center">
+  <img src="img/F-score_umbral4.png" width="640" align="center">
 
 
 ### Trabajos de ampliación
