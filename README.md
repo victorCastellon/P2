@@ -114,6 +114,8 @@ Ejercicios
 
 	* Incremento del nivel potencia en dB, respecto al nivel correspondiente al silencio inicial, para
 	  estar seguros de que un segmento de señal se corresponde con voz.
+	  
+	Observando la gráfica podemos argumentar que el incremento minimo del nivel de poténcia cuando pasamos de un segmento de silencio a uno de voz es de 20db.
 
 	* Duración mínima razonable de los segmentos de voz y silencio.
 
