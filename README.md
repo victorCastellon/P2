@@ -193,7 +193,9 @@ La similitud entre lab y vad es del 95,889% con los parametros alfa1 1 y alfa2 1
    - MS : posible cambio voz a silencio 
    - MV : posible cambio silencio a voz
    
-  Con estos dos estados adicionales nos aseguramos la longitud minima de un fragmento de voz, el nivel minimo de paso de silencio-voz y falsos periodos de voz o silencio.
+  Con estos dos estados adicionales nos aseguramos la longitud minima de un fragmento de voz, el nivel minimo de paso de silencio-voz y falsos periodos de voz o silencio. El esquema correspondiente a lo explicado anteriormente es:
+  
+   <img src="img/esquema.png" width="640" align="center">
 
 - Si lo desea, puede realizar también algún comentario acerca de la realización de la práctica que
   considere de interés de cara a su evaluación.
