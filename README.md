@@ -105,7 +105,7 @@ Ejercicios
   continuación, una captura de `wavesurfer` en la que se vea con claridad la señal temporal, el contorno de
   potencia y la tasa de cruces por cero, junto con el etiquetado manual de los segmentos.
 
-  <img src="img/Segm_voz.jpg" width="640" align="center">
+  <img src="img/power_zcr_wave.jpg" width="640" align="center">
 
   En la grafica podemos observar la zcr, la potencia, label manual y el vad automatizado. En ese orden respectivamente.
 
@@ -131,24 +131,24 @@ Ejercicios
 - Complete el código de los ficheros de la práctica para implementar un detector de actividad vocal en
   tiempo real tan exacto como sea posible. Tome como objetivo la maximización de la puntuación-F `TOTAL`.
 
-  La maxima F Total la hemos obtenido con el parámetro alfa1 = 4.3.
-
 - Inserte una gráfica en la que se vea con claridad la señal temporal, el etiquetado manual y la detección
   automática conseguida para el fichero grabado al efecto. 
 
-  <img src="img/Segm_voz.jpg" width="640" align="center">
+  <img src="img/vad_vs_lab.jpg" width="640" align="center">
 
-  Esta imagen, la misma que el anterior apartado, observamos las diferencias entre el label manual y el vad automatizado.
+  Esta imagen, la misma que el anterior apartado, observamos las diferencias entre el label manual y el vad automatizado. Observamos una gran similitud entre ambos.
 
 - Explique, si existen. las discrepancias entre el etiquetado manual y la detección automática.
 
-  La detección automática detecta correctamente los silencios. Las diferencias radican en que cuando la voz está por debajo del umbral esta es detectada como silencio, por lo tanto nos detecta silencios muy cortos de duración en momentos del audio donde se está hablando. Pero por lo general son bástante parecidos los dos etiquetados.
+  <img src="img/97_vad.jpg" width="640" align="center">
+  
+  La similitud entre lab y vad es del 97,178% con los parametros alfa1 1 y alfa2 10. Es el maximo que hemos podido alcanzar. Creemos que esta diferencia se debe  probablemente en su mayor medida a error humano a la hora de generar el .lab .
 
 - Evalúe los resultados sobre la base de datos `db.v4` con el script `vad_evaluation.pl` e inserte a 
   continuación las tasas de sensibilidad (*recall*) y precisión para el conjunto de la base de datos (sólo
   el resumen).
 
-  <img src="img/F-score_umbral4.png" width="640" align="center">
+  <img src="img/summary_db.jpg" width="640" align="center">
 
 
 ### Trabajos de ampliación
@@ -164,9 +164,6 @@ Ejercicios
   En la imagen superior podemos observar el output wav que nos genera el VAD con los tramos de silencio cancelados y una deteccion de la voz practicamente perfecta.
   Eso lo podemos comprovar comparando visualmente la transcripcion .lab a mano con la .vad generada.
   
-<img src="img/97_vad.jpg" width="640" align="center">
-  
-La similitud entre lab y vad es del 97,178% con los parametros alfa1 1 y alfa2 10. Es el maximo que hemos podido alcanzar. Creemos que esta diferencia se debe probablemente en su mayor medida a error humano a la hora de generar el .lab .
 
 #### Gestión de las opciones del programa usando `docopt_c`
 
