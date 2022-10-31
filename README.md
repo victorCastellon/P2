@@ -159,11 +159,11 @@ Ejercicios
   la que se vea con claridad la señal antes y después de la cancelación (puede que `wavesurfer` no sea la
   mejor opción para esto, ya que no es capaz de visualizar varias señales al mismo tiempo).
   
-  <img src="img/vad_95.png" width="640" align="center">
+  <img src="img/vad_vs_lab_cancel.jpg" width="640" align="center">
   
   El output wav que nos generaba el programa no era correcto. La prueba de que si funciona nuestro algoritmo es el output vad generado que podemos ver en la imagen  superior. Podemos observar que el nuevo vad generado es bastante más similar al lab hecho a mano que el vad del apartado anterior. Sobretodo con los fragmentos de voz, los detecta correctamente.
   
-<img src="img/vad_95_cmd.png" width="640" align="center">
+<img src="img/97_vad.jpg" width="640" align="center">
   
 La similitud entre lab y vad es del 95,889% con los parametros alfa1 1 y alfa2 10. Es el maximo que hemos podido alcanzar.
 
