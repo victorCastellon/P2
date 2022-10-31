@@ -197,7 +197,8 @@ Ejercicios
 
 - Si lo desea, puede realizar también algún comentario acerca de la realización de la práctica que
   considere de interés de cara a su evaluación.
-
+  
+  A la hora de generar el output de nuestro audio con la cancelación de ruido mencionada en apartados anteriores, hemos decidido realizar nuestro código propio para visualizar este audio limpio de ruido.
 
 ### Antes de entregar la práctica
 
