@@ -161,11 +161,12 @@ Ejercicios
   
   <img src="img/vad_vs_lab_cancel.jpg" width="640" align="center">
   
-  El output wav que nos generaba el programa no era correcto. La prueba de que si funciona nuestro algoritmo es el output vad generado que podemos ver en la imagen  superior. Podemos observar que el nuevo vad generado es bastante más similar al lab hecho a mano que el vad del apartado anterior. Sobretodo con los fragmentos de voz, los detecta correctamente.
+  En la imagen superior podemos observar el output wav que nos genera el VAD con los tramos de silencio cancelados y una deteccion de la voz practicamente perfecta.
+  Eso lo podemos comprovar comparando visualmente la transcripcion .lab a mano con la .vad generada.
   
 <img src="img/97_vad.jpg" width="640" align="center">
   
-La similitud entre lab y vad es del 95,889% con los parametros alfa1 1 y alfa2 10. Es el maximo que hemos podido alcanzar.
+La similitud entre lab y vad es del 97,178% con los parametros alfa1 1 y alfa2 10. Es el maximo que hemos podido alcanzar. Creemos que esta diferencia se debe probablemente en su mayor medida a error humano a la hora de generar el .lab .
 
 #### Gestión de las opciones del programa usando `docopt_c`
 
