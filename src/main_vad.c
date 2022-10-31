@@ -15,6 +15,7 @@ int main(int argc, char *argv[]) {
   SF_INFO sf_info;
   FILE *vadfile;
   int n_read = 0, i;
+  int n_write = 0;
 
   VAD_DATA *vad_data;
   VAD_STATE state, last_state, end_state;
@@ -88,20 +89,12 @@ int main(int argc, char *argv[]) {
     /* TODO: print only SILENCE and VOICE labels */
     /* As it is, it prints UNDEF segments but is should be merge to the proper value */
 
-    if(state==ST_SILENCE && (last_state==ST_UNDEF || last_state==ST_MS))
-      last_state = ST_SILENCE;
-    if(state==ST_VOICE && (last_state==ST_UNDEF || last_state==ST_MV))
-      last_state = ST_VOICE;
-
-    /*if (state==ST_MV && last_state==ST_MV)
-      last_state=ST_VOICE;
-    if(state==ST_MS && last_state==ST_MS)
-      last_state=ST_SILENCE;*/
+    if (state==ST_UNDEF) state = ST_SILENCE;
 
     if (state != last_state) {
       if (t != last_t){
         fprintf(vadfile, "%.5f\t%.5f\t%s\n", last_t * frame_duration, t * frame_duration, state2str(last_state));
-        end_state=last_state;
+        //end_state=last_state;
       }
       last_state = state;
       last_t = t;
@@ -109,15 +102,21 @@ int main(int argc, char *argv[]) {
     
     if (sndfile_out != 0) {
       /* TODO: go back and write zeros in silence segments */
+      if(last_state==ST_SILENCE){ 
+        n_write=sf_write_float(sndfile_out,buffer_zeros,frame_size); 
+      }
+      else{
+        n_write=sf_write_float(sndfile_out,buffer,frame_size); 
+      }
+      last_state = state;
     }
-
     
   }
 
   state = vad_close(vad_data);
   /* TODO: what do you want to print, for last frames? */
   if (t != last_t)
-    fprintf(vadfile, "%.5f\t%.5f\t%s\n", last_t * frame_duration, t * frame_duration + n_read / (float) sf_info.samplerate, state2str(end_state));
+    fprintf(vadfile, "%.5f\t%.5f\t%s\n", last_t * frame_duration, t * frame_duration + n_read / (float) sf_info.samplerate, state2str(last_state));
 
   /* clean up: free memory, close open files */
   free(buffer);
